@@ -8,14 +8,114 @@
 #define SYM  2
 #define ADJ  3
 
+#define MOUSE 6
+#define JP_DQUOTE       AT                // "
+#define JP_AMPERSAND    CARET             // &
+#define JP_QUOTE        AMPERSAND         // '
+#define JP_EQUAL        UNDER             // =
+#define JP_CARET        EQUAL             // ^
+#define JP_YEN          0x89              // ¥
+#define JP_PLUS         COLON             // +
+#define JP_TILDE        PLUS              // ~
+#define JP_PIPE         LS(0x89)          // |
+#define JP_AT           LEFT_BRACKET      // @
+#define JP_COLON        SINGLE_QUOTE      // :
+#define JP_ASTERISK     DOUBLE_QUOTES     // *
+#define JP_BACKQUOTE    LEFT_BRACE        // `
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_LBRACKET     RIGHT_BRACKET     // [
+#define JP_RBRACKET     BACKSLASH         // ]
+#define JP_LPAREN       ASTERISK          // (
+#define JP_RPAREN       LEFT_PARENTHESIS  // )
+#define JP_LBRACE       RIGHT_BRACE       // {
+#define JP_RBRACE       PIPE              // }
+#define JP_KANA         LANGUAGE_1        // かな
+#define JP_EISU         LANGUAGE_2        // 英数
+#define JP_HANZEN       GRAVE             // 半角/全角
+#define JP_BSLH  INT1         // (backslash)
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
         };
     };
+
+    moA: moA {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moB: moB {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp EQUAL>, <&kp PLUS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moC: moC {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp INT3>, <&kp JP_PIPE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moD: moD {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp LBKT>, <&kp LBRC>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moE: moE {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp RBKT>, <&kp RBRC>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moF: moF {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp SEMI>, <&kp KP_PLUS>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moG: moG {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp APOSTROPHE>, <&kp DQT>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moH: moH {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp BACKSLASH>, <&kp TILDE2>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    moI: moI {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp JP_BSLH>, <&kp JP_UNDERSCORE>;
+
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -23,52 +123,65 @@
         base {
             display-name = "BASE";
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-                &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+            // -----------------------------------------------------------------------------------------
+            // | TAB |  Q  |  W  |  E  |  R  |  T  |          |  Y  |  U  |  I  |  O  |  P  |  BS |
+            // |SHIFT|  A  |  S  |  D  |  F  |  G  |       　 |  H  |  J  |  K  |  L  |  -  | SQT |
+            // |CTRL|  Z  |  X  |  C  |  V  |  B  |           |  B  |  N  |  M  |  ,  |  .  | ESC | 
+            //                　　 |WIN| nav |SPACE|     　　 | ENT | sys　| ALT |      
+
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  
+&kp LSHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &moA  &kp SQT  
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC  
+&kp LGUI  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp RALT
             >;
         };
 
         nav {
             display-name = "NAV";
             bindings = <
-                &kp TAB     &kp N1          &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-                &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &kp LSHFT   &studio_unlock  &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                                &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            //                　　 |unlock| nav |SPACE|     　　 | ENT | sys　| ALT |
+
+&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
+&kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_8  &kp KP_NUMBER_6  &kp KP_MINUS  &kp KP_EQUAL  
+&kp LEFT_CONTROL  &kp CAPS  &kp LALT  &kp LEFT_GUI  &kp JP_KANA  &kp JP_EISU  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK  &kp KP_DIVIDE  
+&studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
             >;
         };
 
         sym {
             display-name = "SYM";
             bindings = <
-                &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+            // -----------------------------------------------------------------------------------------
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            // |      |     |     |     |     |     |           |    |     |     |     |     |      |
+            //                　　 |WIN| nav |SPACE|     　　 | ENT | sys　| ALT |
+
+&kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN  &kp BSPC  
+&kp LEFT_SHIFT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK  &trans  
+&kp LEFT_CONTROL  &kp GRAVE  &kp SINGLE_QUOTE  &kp SEMI  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS  &kp UNDER  &trans  &trans  &kp PAUSE_BREAK  &trans  
+&kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
         adj {
             display-name = "ADJ";
             bindings = <
-                &mo TAB   &trans &kp F7 &kp F8 &kp F9 &kp F12   &kp C_VOL_DN &kp C_MUTE  &kp C_VOL_UP &trans &trans &kp BSPC
-                &kp LCTRL &trans &kp F4 &kp F5 &kp F6 &kp F11   &trans       &trans      &trans       &trans &trans &trans
-                &bt LSHFT &trans &kp F1 &kp F2 &kp F3 &kp F10   &trans       &trans      &trans       &trans &trans &trans
-                                   &kp LGUI &mo NAV &kp SPACE   &kp RET &mo 2 &kp RALT
+&kp TAB  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp BSPC  
+&kp LEFT_SHIFT  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  
+&kp LCTRL  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans  &trans  &trans  &trans  
+&kp LGUI  &mo NAV  &kp SPACE  &kp RET  &mo 2  &kp RALT
             >;
         };
-        extra_1 {
-                status = "reserved";
-        };
 
-        extra_2 {
-                status = "reserved";
-        };
+        extra_1 { status = "reserved"; };
 
-        extra_3 {
-                status = "reserved";
-        };
+        extra_2 { status = "reserved"; };
+
+        extra_3 { status = "reserved"; };
     };
 };
