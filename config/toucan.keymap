@@ -125,13 +125,13 @@
             bindings = <
             // -----------------------------------------------------------------------------------------
             // | TAB |  Q  |  W  |  E  |  R  |  T  |          |  Y  |  U  |  I  |  O  |  P  |  BS |
-            // |SHIFT|  A  |  S  |  D  |  F  |  G  |       　 |  H  |  J  |  K  |  L  |  -  | SQT |
-            // |CTRL|  Z  |  X  |  C  |  V  |  B  |           |  B  |  N  |  M  |  ,  |  .  | ESC | 
+            // |SHIFT|  A  |  S  |  D  |  F  |  G  |       　 |  H  |  J  |  K  |  L  |  -  | MUHENKAN |
+            // |CTRL|  Z  |  X  |  C  |  V  |  B  |           |  B  |  N  |  M  |  ,  |  .  | HENKAN | 
             //                　　 |WIN| nav |SPACE|     　　 | ENT | sys　| LS(LG(S)) |      
 
 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  
-&kp LSHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &moA  &kp SQT  
-&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC  
+&kp LSHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &moA  &kp MUHENKAN
+&kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp HENKAN  
 &kp LGUI  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp LS(LG(S))
             >;
         };
