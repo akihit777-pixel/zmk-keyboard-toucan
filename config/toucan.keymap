@@ -174,7 +174,7 @@
             bindings = <
 
             // | TAB |  F1  |  F2  |  F3  |  F4  |  F5  |           | BT0 | BT1 | BT2 | BT3 |  BT4   |  BS |
-            // |SHIFT|  F6  |  F7  |  F8  |  F9  |  F0  |           |     |     |     |BTCLR|BTallCLR|  BS |
+            // |SHIFT|  F6  |  F7  |  F8  |  F9  |  F0  |           |     |     |BTCLR|BTallCLR|     |     |
             // |CTRL |  F11  | F12 |      |      |      |           |     |     |     |     |        |     |
             //                        | WIN | nav | SPACE |    | ENT | sys | ALT |   
 
