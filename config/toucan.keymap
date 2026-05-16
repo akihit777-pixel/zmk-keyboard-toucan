@@ -157,12 +157,12 @@
             display-name = "SYM";
             bindings = <
 
-            // | TAB |  1  |  2  |  3  |  4  |  5  |           |  6  |  7  |  8  |  9  |   0  |  BS |
-            // |SHIFT|  6  |  7  |  8  |  9  |  0  |           |  6  |  7  |  8  |  9  |   0  |  BS |
-            // |CTRL |  6  |  7  |  8  |  9  |  0  |           |  6  |  7  |  8  |  9  |   0  |  BS |
-            //                        | WIN |     |    |    |     |     |     |   
+            // | TAB |  !  |  @  |  #  |  $  |  %  |           |PAGE_UP  | HOME |  ↑  | END |PRSC|  BS |
+            // |SHIFT|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|   ←  |  ↓  |  →  |SCLK|  　 |
+            // |CTRL |  `  |  '  |  ;  |  [  |  ]  |           |  　-    |  _  |     |  　 | 　 |  　 |
+            //                        | WIN | nav |SPACE|    | ENT | sys | ALT |    
 
-&kp TAB  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN  &kp BSPC  
+&kp TAB  &kp EXCLAMATION  &kp AT_SIGN &kp HASH &kp DOLLAR &kp PERCENT   &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN  &kp BSPC  
 &kp LEFT_SHIFT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK  &trans  
 &kp LEFT_CONTROL  &kp GRAVE  &kp SINGLE_QUOTE  &kp SEMI  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS  &kp UNDER  &trans  &trans  &kp PAUSE_BREAK  &trans  
 &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
@@ -173,10 +173,10 @@
             display-name = "ADJ";
             bindings = <
 
-            // | TAB |  1  |  2  |  3  |  4  |  5  |           |  6  |  7  |  8  |  9  |   0  |  BS |
-            // |SHIFT|  6  |  7  |  8  |  9  |  0  |           |  6  |  7  |  8  |  9  |   0  |  BS |
-            // |CTRL |  6  |  7  |  8  |  9  |  0  |           |  6  |  7  |  8  |  9  |   0  |  BS |
-            //                        | WIN |     |    |    |     |     |     |   
+            // | TAB |  F1  |  F2  |  F3  |  F4  |  F5  |           | BT0 | BT1 | BT2 | BT3 |  BT4   |  BS |
+            // |SHIFT|  F6  |  F7  |  F8  |  F9  |  F0  |           |     |     |     |BTCLR|BTallCLR|  BS |
+            // |CTRL |  F11  | F12 |      |      |      |           |     |     |     |     |        |     |
+            //                        | WIN | nav | SPACE |    | ENT | sys | ALT |   
 
 &kp TAB  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp BSPC  
 &kp LEFT_SHIFT  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  
