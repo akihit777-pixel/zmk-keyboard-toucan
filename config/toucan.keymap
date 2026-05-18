@@ -147,7 +147,7 @@
             //                　   | unlock | nav | SPACE|   | ENT | sys |  0   |   
 
 &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
-&kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_8  &kp KP_NUMBER_6  &kp KP_MINUS  &kp KP_EQUAL  
+&kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_8  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
 &kp LEFT_CONTROL  &kp CAPS  &kp RALT  &kp JP_HANZEN  &kp INT_HENKAN  &kp INT_MUHENKAN  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK  &kp KP_DIVIDE  
 &studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
             >;
