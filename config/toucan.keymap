@@ -30,7 +30,9 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
-#define JP_BSLH  INT1         // (backslash)
+#define JP_BSLH         INT1              // (backslash)
+#define JP_LESS_THAN    LS(DOT)           // <
+#define JP_GREATER_THAN LS(SLASH)         // >
 
 / {
     conditional_layers {
@@ -115,7 +117,30 @@
     };
 
     behaviors {
+        // カスタムHold-Tapの名前を定義
+        lt_nav_henkan: lt_nav_henkan {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_NAV_HENKAN";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;      // 判定時間（好みに合わせて150〜200で調整）
+            quick-tap-ms = <200>;        // 連続タップ時はタップ（無変換）を優先
+            flavor = "hold-preferred";    // 迷ったらホールド（レイヤー）を優先する設定
+            bindings = <&mo>, <&kp>;
+        };
     };
+    behaviors {
+        // カスタムHold-Tapの名前を定義
+        lt_sys_muhenkan: lt_sys_muhenkan {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SYS_MUHENKAN";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;      // 判定時間（好みに合わせて150〜200で調整）
+            quick-tap-ms = <200>;        // 連続タップ時はタップ（無変換）を優先
+            flavor = "hold-preferred";    // 迷ったらホールド（レイヤー）を優先する設定
+            bindings = <&mo>, <&kp>;
+        };
+    };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -133,7 +158,7 @@
 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  
 &kp LSHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &moA  &kp JP_EISU  
 &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp JP_KANA  
-&kp LGUI  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp LS(LG(S))
+&kp LGUI  &lt_nav_henkan 1 INT_HENKAN  &kp SPACE  &kp RET  &lt_sys_muhenkan 2 INT_MUHENKAN  &kp LS(LG(S))
             >;
         };
 
@@ -143,12 +168,12 @@
 
             // | TAB |  1  |  2  |  3  |  4  |  5  |      　   |NUMLOCK|  7  |  8  |  9  |  + |  BS |
             // |SHIFT|  6  |  7  |  8  |  9  |  0  |     　　   |   ,  |  4  |  5  |  6  |  - |  =  |
-            // |CTRL | CAPS| ALT|半/全|HENKAN|MUHENKAN|     　  |   .  |  1  |  2  |  3  |  * |  /  |
+            // |CTRL | CAPS| ALT|半/全|HENKAN|MUHENKAN|     　  |   .  |  1  |  2  |  3  |  / |  *  |
             //                　   | unlock | nav | SPACE|   | ENT | sys |  0   |   
 
 &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
-&kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_8  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
-&kp LEFT_CONTROL  &kp CAPS  &kp RALT  &kp JP_HANZEN  &kp INT_HENKAN  &kp INT_MUHENKAN  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK  &kp KP_DIVIDE  
+&kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
+&kp LEFT_CONTROL  &kp CAPS  &kp RALT  &kp JP_HANZEN  &kp INT_HENKAN  &kp INT_MUHENKAN  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3 &kp KP_DIVIDE &kp KP_ASTERISK    
 &studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
             >;
         };
@@ -158,13 +183,13 @@
             bindings = <
 
             // | TAB |  !  |  @  |  #  |  $  |  %  |           |PAGE_UP  | HOME |  ↑  | END | PRSC   |  BS  |
-            // |SHIFT|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|   ←  |  ↓  |  →  | SCLK   |  　  |
-            // |CTRL |  `  |  '  |  ;  |  [  |  ]  |           |  　-    |   _  |  {  |  } |PAUSE_BREAK|  　 |
+            // |SHIFT|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|   ←  |  ↓  |  →  | SCLK   |PAUSE_BREAK|
+            // |CTRL |  `  |  '  |  ;  |  [  |  ]  |           |  　-    |   _  |  {  |  } |      |  　 |
             //                        | WIN | nav |SPACE|    | ENT | sys | ALT |    
 
 &kp TAB  &kp EXCLAMATION  &kp JP_AT &kp HASH &kp DOLLAR &kp PERCENT   &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN  &kp BSPC  
-&kp LEFT_SHIFT  &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN  &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK  &trans  
-&kp LEFT_CONTROL  &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMI  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp MINUS  &kp JP_UNDERSCORE  &kp JP_LBRACE  &kp JP_RBRACE  &kp PAUSE_BREAK  &trans  
+&kp LEFT_SHIFT  &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN  &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK  &kp PAUSE_BREAK  
+&kp LEFT_CONTROL  &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMI  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp MINUS  &kp JP_UNDERSCORE  &kp JP_LESS_THAN  &kp JP_GREATER_THAN &kp JP_LBRACE  &kp JP_RBRACE    
 &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
