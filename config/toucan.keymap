@@ -140,7 +140,19 @@
             bindings = <&mo>, <&kp>;
         };
     };
+    combos {
+        compatible = "zmk,combos";
 
+        CONBO_ESC {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        COMBO_TAB {
+            bindings = <&kp TAB>;
+            key-positions = <10 11>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
