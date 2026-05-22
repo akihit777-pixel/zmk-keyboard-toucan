@@ -148,9 +148,14 @@
             key-positions = <0 1>;
         };
 
-        COMBO_TAB {
-            bindings = <&kp TAB>;
+        COMBO_JP_HANZEN {
+            bindings = <&kp JP_HANZEN>;
             key-positions = <12 13>;
+        };
+
+        COMBO_CAPS {
+            bindings = <&kp CAPS>;
+            key-positions = <24 25>;
         };
     };
 
@@ -162,9 +167,12 @@
             bindings = <
 
             // -----------------------------------------------------------------------------------------
-            // | TAB |  Q  |  W  |  E  |  R  |  T  |           |  Y  |  U  |  I  |  O  |  P  |  BS |
+            // | TAB |  Q  |  W  |  E  |  R  |  T  |           |  Y  |  U  |  I  |  O  |  P  |  BS 
+            // |    ESC
             // |SHIFT|  A  |  S  |  D  |  F  |  G  |           |  H  |  J  |  K  |  L  |  -  | EISU | 
+            // |    半/全
             // |CTRL |  Z  |  X  |  C  |  V  |  B  |           |  N  |  M  |  ,  |  .  |  /  | KANA |
+            // |    CAPS
             //                        | WIN | nav |PACE|    | ENT | SYS | LS(LG(S))| 
             //                              HENKAN                MUHENKAN
 
@@ -180,8 +188,11 @@
             bindings = <
 
             // | TAB |  1  |  2  |  3  |  4  |  5  |     　   |NUMLOCK|  7  |  8  |  9  |  + |  BS |
+            // |    ESC
             // |SHIFT|  6  |  7  |  8  |  9  |  0  |    　　   |   ,  |  4  |  5  |  6  |  - |  =  |
+            // |    半/全
             // |CTRL |CAPS| ALT|半/全|HENKAN|MUHENKAN|     　  |   .  |  1  |  2  |  3  |  / |  *  |
+            // |    CAPS
             //                　   | unlock | nav | SPACE|   | ENT | sys |  0   |   
 
 &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
@@ -196,8 +207,11 @@
             bindings = <
 
             // | TAB |  !  |  @  |  #  |  $  |  %  |           |PAGE_UP  |HOME |  ↑  | END | PRSC |  BS  |
+            // |    ESC
             // |SHIFT|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|  ←  |  ↓  |  →  | SCLK |PAUSE_BREAK|
+            // |    半/全
             // |CTRL |  `  |  '  |  ;  |  [  |  ]  |           |  　-    |  _  |  <  |  >  |   {  |   }  |
+            // |    CAPS
             //                        | WIN | nav |SPACE|    | ENT | sys | ALT |    
 
 &kp TAB  &kp EXCLAMATION  &kp JP_AT &kp HASH &kp DOLLAR &kp PERCENT   &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN  &kp BSPC  
@@ -212,8 +226,11 @@
             bindings = <
 
             // | TAB |  F1  |  F2  |  F3  |  F4  |  F5  |           | BT0 | BT1 | BT2 | BT3 |  BT4   |  BS |
+            // |    ESC
             // |SHIFT|  F6  |  F7  |  F8  |  F9  |  F0  |           |     |     |BTCLR|BTallCLR|     |     |
+            // |    半/全
             // |CTRL |  F11  | F12 |      |      |      |           |     |     |     |     |        |     |
+            // |    CAPS
             //                        | WIN | nav | SPACE |    | ENT | sys | ALT |   
 
 &kp TAB  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp BSPC  
