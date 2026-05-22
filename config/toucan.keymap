@@ -191,13 +191,13 @@
             // |    ESC
             // |SHIFT|  6  |  7  |  8  |  9  |  0  |    　　   |   ,  |  4  |  5  |  6  |  - |  =  |
             // |    半/全
-            // |CTRL |CAPS| ALT|半/全|HENKAN|MUHENKAN|     　  |   .  |  1  |  2  |  3  |  / |  *  |
+            // |CTRL |LS(0x89)|  ¥  |  :  |  ~  |  _  |     　  |   .  |  1  |  2  |  3  |  / |  *  |
             // |    CAPS
             //                　   | unlock | nav | SPACE|   | ENT | sys |  0   |   
 
 &kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
 &kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
-&kp LEFT_CONTROL  &kp CAPS  &kp RALT  &kp JP_HANZEN  &kp INT_HENKAN  &kp INT_MUHENKAN  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3 &kp KP_DIVIDE &kp KP_ASTERISK    
+&kp LEFT_CONTROL  &kp JP_PIPE  &kp JP_YEN  &kp JP_COLON  &kp JP_TILDE  &kp JP_UNDERSCORE  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3 &kp KP_DIVIDE &kp KP_ASTERISK    
 &studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
             >;
         };
