@@ -154,7 +154,7 @@
         };
 
         COMBO_CAPS {
-            bindings = <&kp CAPS>;
+            bindings = <&kp LS(CAPS)>;
             key-positions = <24 25>;
         };
     };
