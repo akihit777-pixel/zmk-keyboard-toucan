@@ -179,7 +179,7 @@
 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  
 &kp LSHIFT  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &moA  &kp DEL  
 &kp LCTRL  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp  LS(FSLH) 
-&kp LGUI  &lt_nav_henkan 1 INT_HENKAN  &kp SPACE  &kp RET  &lt_sys_muhenkan 2 INT_MUHENKAN  &kp LALT
+&kp LGUI  &lt_nav_muhenkan 1 INT_MUHENKAN  &kp SPACE  &kp RET  &lt_sys_henkan 2 INT_HENKAN  &kp LALT
             >;
         };
 
