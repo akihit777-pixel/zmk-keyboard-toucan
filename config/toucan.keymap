@@ -118,9 +118,9 @@
 
     behaviors {
         // カスタムHold-Tapの名前を定義
-        lt_nav_henkan: lt_nav_henkan {
+        lt_nav_muhenkan: lt_nav_muhenkan {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_NAV_HENKAN";
+            label = "LT_NAV_MUHENKAN";
             #binding-cells = <2>;
             tapping-term-ms = <150>;      // 判定時間（好みに合わせて150〜200で調整）
             quick-tap-ms = <150>;        // 連続タップ時はタップ（無変換）を優先
@@ -130,9 +130,9 @@
     };
     behaviors {
         // カスタムHold-Tapの名前を定義
-        lt_sys_muhenkan: lt_sys_muhenkan {
+        lt_sys_henkan: lt_sys_henkan {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_SYS_MUHENKAN";
+            label = "LT_SYS_HENKAN";
             #binding-cells = <2>;
             tapping-term-ms = <150>;      // 判定時間（好みに合わせて150〜200で調整）
             quick-tap-ms = <150>;        // 連続タップ時はタップ（無変換）を優先
