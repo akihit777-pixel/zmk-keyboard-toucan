@@ -254,8 +254,8 @@
             // |    CAPS
             //                　   | unlock | nav | SPACE|   | ENT | sys |  0   |   
 
-&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
-&kp LEFT_SHIFT  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
+&tab_esc ESCAPE TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
+&jis_shft LSHIFT JP_HANZEN  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
 &kp LS(LG(S))   &kp LC(C)  &kp LC(V)  &kp JP_COLON  &kp JP_TILDE  &kp JP_UNDERSCORE  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3 &kp KP_DIVIDE &kp KP_ASTERISK    
 &studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
             >;
