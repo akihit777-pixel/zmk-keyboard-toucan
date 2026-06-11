@@ -211,10 +211,10 @@
             // | ESC
             // |半/全|  A  |  S  |  D  |  F  |  G  |           |  H  |  J  |  K  |  L  |  -  | DEL | 
             // |SHIFT    
-            // |CTRL |  Z  |  X  |  C  |  V  |  B  |           |  N  |  M  |  ,  |  .  |  /  |  ?  |
-            // |CAPS
+            // |CAPS |  Z  |  X  |  C  |  V  |  B  |           |  N  |  M  |  ,  |  .  |  /  |  ?  |
+            // |CTRL
             //                        | WIN | nav |PACE|    | ENT | SYS | ALT | 
-            //                              HENKAN                MUHENKAN
+            //                              MUHENKAN                HENKAN
 
 &tab_esc ESCAPE TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  
 &jis_shft LSHIFT JP_HANZEN  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &moA  &kp DEL  
@@ -228,17 +228,17 @@
             bindings = <
 
             // | TAB |  !  |  @  |  #  |  $  |  %  |           |PAGE_UP  |HOME |  ↑  | END | PRSC |  BS  |
-            // |    ESC
-            // |SHIFT|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|  ←  |  ↓  |  →  | SCLK |PAUSE_BREAK|
-            // |    半/全
-            // |CTRL |  `  |  '  |  ;  |  [  |  ]  |           |  　-    |  _  |  <  |  >  |   {  |   }  |
-            // |    CAPS
-            //                        | WIN | nav |SPACE|    | ENT | sys | ALT |    
+            // | ESC
+            // |半/全|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|  ←  |  ↓  |  →  | SCLK |PAUSE_BREAK|
+            // | SHIFT  
+            // |GCOPY| CC  | CV  |  ;  |  [  |  ]  |           |  　-    |  _  |  <  |  >  |   {  |   }  |
+            // | CTRL   
+            //                        | unlock | nav |SPACE|    | ENT | sys | ALT |    
 
 &tab_esc ESCAPE TAB  &kp EXCLAMATION  &kp JP_AT &kp HASH &kp DOLLAR &kp PERCENT   &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN  &kp BSPC  
 &jis_shft LSHIFT JP_HANZEN  &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN  &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK  &kp PAUSE_BREAK  
-&caps_ctrl LCTRL CAPS  &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMI  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp MINUS  &kp JP_UNDERSCORE  &kp JP_LESS_THAN  &kp JP_GREATER_THAN &kp JP_LBRACE  &kp JP_RBRACE    
-&kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
+&caps_ctrl LCTRL LS(LG(S))  &kp LC(C)  &kp LC(V)  &kp SEMI  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp MINUS  &kp JP_UNDERSCORE  &kp JP_LESS_THAN  &kp JP_GREATER_THAN &kp JP_LBRACE  &kp JP_RBRACE    
+&studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
@@ -247,17 +247,17 @@
             bindings = <
 
             // | TAB |  1  |  2  |  3  |  4  |  5  |     　   |NUMLOCK|  7  |  8  |  9  |  + |  BS |
-            // |    ESC
-            // |SHIFT|  6  |  7  |  8  |  9  |  0  |    　　   |   ,  |  4  |  5  |  6  |  - |  =  |
-            // |    半/全
-            // |GCOPY| CC  | CV  |  :  |  ~  |  _  |     　    |   .  |  1  |  2  |  3  |  / |  *  |
-            // |    CAPS
-            //                　   | unlock | nav | SPACE|   | ENT | sys |  0   |   
+            // |ESC
+            // |半/全|  6  |  7  |  8  |  9  |  0  |    　　   |   ,  |  4  |  5  |  6  |  - |  =  |
+            // |SHIFT  
+            // |CAPS |  `  |  '  |  :  |  ~  |  _  |     　    |   .  |  1  |  2  |  3  |  / |  *  |
+            // |CTRL 
+            //                　   | WIN  | nav | SPACE|   | ENT | sys |  0   |   
 
 &tab_esc ESCAPE TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS  &kp BSPC  
 &jis_shft LSHIFT JP_HANZEN  &kp N6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS  &kp JP_EQUAL  
-&kp LS(LG(S))   &kp LC(C)  &kp LC(V)  &kp JP_COLON  &kp JP_TILDE  &kp JP_UNDERSCORE  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3 &kp KP_DIVIDE &kp KP_ASTERISK    
-&studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
+&caps_ctrl LCTRL CAPS  &kp JP_BACKQUOTE  &kp JP_QUOTE &kp JP_COLON  &kp JP_TILDE  &kp JP_UNDERSCORE  &kp KP_DOT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3 &kp KP_DIVIDE &kp KP_ASTERISK    
+&kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp KP_NUMBER_0
             >;
         };
 
