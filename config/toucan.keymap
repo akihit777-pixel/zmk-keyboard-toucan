@@ -122,8 +122,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LT_NAV_MUHENKAN";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;      // 判定時間（好みに合わせて150〜200で調整）
-            quick-tap-ms = <150>;        // 連続タップ時はタップ（無変換）を優先
+            tapping-term-ms = <200>;      // 判定時間（好みに合わせて150〜200で調整）
+            quick-tap-ms = <200>;        // 連続タップ時はタップ（無変換）を優先
             flavor = "hold-preferred";    // 迷ったらホールド（レイヤー）を優先する設定
             bindings = <&mo>, <&kp>;
         };
@@ -134,8 +134,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LT_SYS_HENKAN";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;      // 判定時間（好みに合わせて150〜200で調整）
-            quick-tap-ms = <150>;        // 連続タップ時はタップ（無変換）を優先
+            tapping-term-ms = <200>;      // 判定時間（好みに合わせて150〜200で調整）
+            quick-tap-ms = <200>;        // 連続タップ時はタップ（無変換）を優先
             flavor = "hold-preferred";    // 迷ったらホールド（レイヤー）を優先する設定
             bindings = <&mo>, <&kp>;
         };
@@ -231,13 +231,13 @@
             // | ESC
             // |半/全|  ^  |  &  |  *  |  (  |  )  |           |PAGE_DOWN|  ←  |  ↓  |  →  | SCLK |PAUSE_BREAK|
             // | SHIFT  
-            // |GCOPY| CC  | CV  |  ;  |  [  |  ]  |           |  　-    |  _  |  <  |  >  |   {  |   }  |
+            // |GCOPY|  "  |  ¥  |  ;  |  [  |  ]  |           |  　-    |  _  |  <  |  >  |   {  |   }  |
             // | CTRL   
             //                        | unlock | nav |SPACE|    | ENT | sys | BS |    
 
 &tab_esc ESCAPE TAB  &kp EXCLAMATION  &kp JP_AT &kp HASH &kp DOLLAR &kp PERCENT   &kp PAGE_UP  &kp HOME  &kp UP_ARROW  &kp END  &kp PRINTSCREEN   &kp RALT 
 &jis_shft LSHIFT JP_HANZEN  &kp JP_CARET  &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN  &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK  &kp PAUSE_BREAK  
-&caps_ctrl LCTRL LS(LG(S))  &kp LC(C)  &kp LC(V)  &kp SEMI  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp MINUS  &kp JP_UNDERSCORE  &kp JP_LESS_THAN  &kp JP_GREATER_THAN &kp JP_LBRACE  &kp JP_RBRACE    
+&caps_ctrl LCTRL LS(LG(S))  &kp JP_DQUOTE  &kp JP_YEN  &kp SEMI  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp MINUS  &kp JP_UNDERSCORE  &kp JP_LESS_THAN  &kp JP_GREATER_THAN &kp JP_LBRACE  &kp JP_RBRACE    
 &studio_unlock  &trans  &kp SPACE  &kp RET  &trans  &kp BSPC
             >;
         };
